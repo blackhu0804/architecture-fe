@@ -16,11 +16,11 @@ a boilderplate for fe architechture
 
 # file structure
 
-|- src
-|- |- app
-|- |- components
-|- |- global
-|- |- |- reset.css
+- src
+- - app
+- - components
+- - global
+- - - reset.css
 
 
 
