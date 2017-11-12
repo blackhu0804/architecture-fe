@@ -1,5 +1,6 @@
 {
   "presets": [
+    //预设，一大堆plugins
     "stage-0",
     "es2015",
     "react"

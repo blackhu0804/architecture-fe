@@ -2,24 +2,24 @@ const path = require('path');
 const entry = require('./entry');
 const ExtractTextPlugin = require("extract-text-webpack-plugin");;
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+
 module.exports = {
-  context: path.resolve(process.cwd(), "src/app"),
+  context: path.resolve(process.cwd(), "src"),//指定webpack编译的上下文
   entry: entry,
   watch: true,
+  
   output: {
+    publicPath: '/dist',
     path: path.resolve(process.cwd(), "dist"),
     filename: "[name].js"
   },
   plugins: [
-    new ExtractTextPlugin("css/[name].css"),
+    new ExtractTextPlugin("app/css/[name].css"),
     new HtmlWebpackPlugin({
       title: 'sale',
-      template: path.resolve(
-        process.cwd(),
-        'src/base/webpack.template.html'
-      ),
-      filename: 'sale.html',
+      template: 'base/html.template.html',
       chunks: ['sale'],
+      filename: 'sale.html',
     }),
   ],
   module: {
