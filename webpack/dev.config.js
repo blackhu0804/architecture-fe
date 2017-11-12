@@ -1,13 +1,13 @@
-const baseWebpackConfig = require('./base.config')
+const path = require('path');
+const baseWebpackConfig = require('./base.config.js');
 const devWebpackPartialConfig = {
-  devServer: {
-    contentBase: path.join(process.cwd(), "sample"),
-    compress: true,
-  },
+    watch: true,
+    devServer: {
+        contentBase: path.join(process.cwd(), "sample"),
+        compress: true,
+        port: 9000
+    },
 };
-
 module.exports = Object.assign({},
-  baseWebpackConfig,
-  {
-    devWebpackPartialConfig
-  });
+    baseWebpackConfig,
+    devWebpackPartialConfig);

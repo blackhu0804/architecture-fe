@@ -6,8 +6,6 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 module.exports = {
   context: path.resolve(process.cwd(), "src"),//指定webpack编译的上下文
   entry: entry,
-  watch: true,
-  
   output: {
     publicPath: '/dist',
     path: path.resolve(process.cwd(), "dist"),
@@ -22,10 +20,13 @@ module.exports = {
       filename: 'sale.html',
     }),
   ],
+  resolve: {
+    extensions: [".js", ".jsx", ".json"],  
+  },
   module: {
     rules: [
       {
-        test: /\.js$/,
+        test: /\.jsx?$/,
         loader: 'babel-loader',
       },
       {
